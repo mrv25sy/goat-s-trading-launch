@@ -119,9 +119,9 @@ export function Contact() {
               </button>
               <p aria-live="polite" className="min-h-5">
                 {submitted && (
-                  <span className="inline-flex items-center gap-2 text-sm text-success">
-                    <CheckCircle2 className="h-4 w-4" aria-hidden /> Thanks — your details look
-                    good. Our team will be in touch.
+                  <span className="inline-flex items-center gap-2 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
+                    <CheckCircle2 className="h-4 w-4 shrink-0" aria-hidden /> Thank you. Your
+                    message has been sent and our team will contact you soon.
                   </span>
                 )}
               </p>
