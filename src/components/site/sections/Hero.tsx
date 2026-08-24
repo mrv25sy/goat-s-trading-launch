@@ -20,9 +20,9 @@ export function Hero() {
               Learn financial markets. Trade with a system. Grow with a community.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              The Goat is GO AI's flagship program. AI-powered education, expert-led
-              recommendations, and hands-on support to help you build real skills in forex, crypto,
-              gold, and investing.
+              <strong className="font-semibold text-foreground">The Goat</strong> is GO AI's
+              flagship program. AI-powered education, expert-led recommendations, and hands-on
+              support to help you build real skills in forex, crypto, gold, and investing.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a

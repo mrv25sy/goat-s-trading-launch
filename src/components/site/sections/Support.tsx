@@ -14,18 +14,18 @@ export function Support() {
               response in under 10 minutes, backed by regular follow-up calls to keep you moving
               forward.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 space-y-2.5">
               {[
-                { Icon: Clock, text: "Under 10 minutes average response time" },
-                { Icon: PhoneCall, text: "Regular scheduled follow-up calls" },
-                { Icon: Headset, text: "A dedicated team available every day" },
-              ].map(({ Icon, text }) => (
-                <li
-                  key={text}
-                  className="flex items-center gap-3 rounded-lg border border-border bg-surface px-4 py-3"
-                >
-                  <Icon className="h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} aria-hidden />
-                  <span className="text-sm text-foreground">{text}</span>
+                "Under 10 minutes average response time",
+                "Regular scheduled follow-up calls",
+                "A dedicated team available every day",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2.5 text-sm text-foreground">
+                  <span
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                    aria-hidden="true"
+                  />
+                  {text}
                 </li>
               ))}
             </ul>
