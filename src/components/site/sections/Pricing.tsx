@@ -105,9 +105,9 @@ export function Pricing() {
                   </th>
                   {row.values.map((value, i) => (
                     <td
-                      key={PLANS[i].name}
+                      key={PLANS[i]?.name ?? i}
                       className={`h-14 px-5 ${
-                        PLANS[i].popular ? "border-x border-primary/50 bg-primary/5" : ""
+                        PLANS[i]?.popular ? "border-x border-primary/50 bg-primary/5" : ""
                       }`}
                     >
                       <span className="flex items-center">
