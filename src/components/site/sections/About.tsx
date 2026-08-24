@@ -57,10 +57,6 @@ export function About() {
                 </figure>
               ))}
             </div>
-            <p className="mt-3 text-xs text-muted-foreground">
-              Placeholder slots for your real event and conference photography — drop the final
-              images in and the layout stays the same.
-            </p>
           </div>
         </div>
       </div>

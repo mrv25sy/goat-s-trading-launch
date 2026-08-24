@@ -38,7 +38,7 @@ const PROGRAMS: { Icon: LucideIcon; title: string; body: string }[] = [
   {
     Icon: PiggyBank,
     title: "Investment system",
-    body: "Investment knowledge is one of the most valuable skills of this era. Our AI reviews the market daily to surface strong investment opportunities, with a daily update on your portfolio — no extra effort required on your side.",
+    body: "Investment knowledge is one of the most valuable skills of this era. Our AI reviews the market daily to surface strong investment opportunities, with a daily update on your portfolio, no extra effort required on your side.",
   },
   {
     Icon: Bot,
@@ -54,7 +54,7 @@ export function Programs() {
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Programs</h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Seven connected tracks — structured teaching, live specialist coverage, and AI systems
+            Seven connected tracks, structured teaching, live specialist coverage, and AI systems
             built for each market.
           </p>
         </div>
