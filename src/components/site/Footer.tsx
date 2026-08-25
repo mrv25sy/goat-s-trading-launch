@@ -14,14 +14,14 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.5fr]">
+          <div>
             <div className="flex items-center gap-2.5">
               <Logo />
               <span className="text-sm font-semibold tracking-[0.18em] uppercase">The Goat</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              GO AI Academy's flagship financial markets education program — structured learning,
+              GO AI Academy's flagship financial markets education program, structured learning,
               expert recommendations, and daily support.
             </p>
             <div className="mt-5 flex items-center gap-2">
@@ -67,7 +67,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div>
+          <div className="md:col-span-2 lg:col-span-1">
             <h2 className="text-xs font-semibold tracking-[0.14em] text-foreground uppercase">
               Legal &amp; contact
             </h2>
@@ -91,7 +91,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:hello@goai-academy.example"
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex items-center gap-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Mail className="h-4 w-4" />
                   hello@goai-academy.example
