@@ -32,7 +32,7 @@ export function Contact() {
 
   try {
     const response = await fetch(
-      "https://test120.app.n8n.cloud/webhook-test/send",
+      "https://test120.app.n8n.cloud/webhook/send",
       {
         method: "POST",
         headers: {
