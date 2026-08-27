@@ -57,20 +57,23 @@ export function Contact() {
             <ul className="mt-8 space-y-3">
               <li>
                 <a
-                  href="mailto:hello@goai-academy.example"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=thegoat@gmail.com&su=New%20inquiry%20%E2%80%94%20THE%20GOAT%20website"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground"
                 >
                   <Mail className="h-4.5 w-4.5 text-primary" strokeWidth={1.75} aria-hidden />
-                  hello@goai-academy.example
+                  
+                  @thegoat@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/the.goat.trading"
                   className="inline-flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground"
                 >
                   <Instagram className="h-4.5 w-4.5 text-primary" strokeWidth={1.75} aria-hidden />
-                  @goai.academy
+                  @the.goat.trading
                 </a>
               </li>
             </ul>

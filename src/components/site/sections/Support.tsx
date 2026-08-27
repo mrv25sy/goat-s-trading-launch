@@ -1,5 +1,10 @@
 import { Clock, PhoneCall, Headset, ImageIcon, Globe2 } from "lucide-react";
 
+// To add the real community photo: put the image file in /public/images/,
+// then set this to "/images/your-file-name.jpg". Leave it as "" to keep
+// showing the placeholder box.
+const COMMUNITY_PHOTO_SRC = "/images/p7.jpg";
+
 export function Support() {
   return (
     <section id="support" className="border-b border-border">
@@ -37,21 +42,35 @@ export function Support() {
               Join a community of thousands of members from around the world. Build real connections
               with people from different countries, all working toward the same goal.
             </p>
-            <figure className="mt-8 flex flex-col items-center justify-center rounded-xl border border-dashed border-border-strong bg-surface px-6 py-12 text-center">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
-                <ImageIcon className="h-5 w-5 text-muted-foreground" strokeWidth={1.75} aria-hidden />
-              </span>
-              <figcaption className="mt-3 text-sm font-medium text-foreground">
-                Community photo slot — members meetup
-              </figcaption>
-              <span className="mt-1 text-xs text-muted-foreground">
-                Add your real community photograph here · Landscape, 1600×900
-              </span>
-              <span className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
-                <Globe2 className="h-4 w-4" strokeWidth={1.75} aria-hidden />
-                Members across 50+ countries
-              </span>
-            </figure>
+            {COMMUNITY_PHOTO_SRC ? (
+              <figure className="mt-8 overflow-hidden rounded-xl border border-border-strong">
+                <img
+                  src={COMMUNITY_PHOTO_SRC}
+                  alt="Community members meetup"
+                  className="h-64 w-full object-cover"
+                />
+                <figcaption className="flex items-center gap-2 border-t border-border bg-surface px-4 py-3 text-xs text-muted-foreground">
+                  <Globe2 className="h-4 w-4" strokeWidth={1.75} aria-hidden />
+                  Members across 50+ countries
+                </figcaption>
+              </figure>
+            ) : (
+              <figure className="mt-8 flex flex-col items-center justify-center rounded-xl border border-dashed border-border-strong bg-surface px-6 py-12 text-center">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
+                  <ImageIcon className="h-5 w-5 text-muted-foreground" strokeWidth={1.75} aria-hidden />
+                </span>
+                <figcaption className="mt-3 text-sm font-medium text-foreground">
+                  Community photo slot — members meetup
+                </figcaption>
+                <span className="mt-1 text-xs text-muted-foreground">
+                  Add your real community photograph here · Landscape, 1600×900
+                </span>
+                <span className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
+                  <Globe2 className="h-4 w-4" strokeWidth={1.75} aria-hidden />
+                  Members across 50+ countries
+                </span>
+              </figure>
+            )}
           </div>
         </div>
       </div>

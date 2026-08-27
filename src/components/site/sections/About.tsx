@@ -1,18 +1,21 @@
 import { ImageIcon } from "lucide-react";
 
+// To add a real photo: put the image file in /public/images/, then set its
+// "src" below to "/images/your-file-name.jpg". Leave src empty ("") to keep
+// showing the placeholder box for that slot.
 const PHOTO_SLOTS = [
-  { label: "Annual conference — Dubai", hint: "Landscape, 1600×900", span: "sm:col-span-2 sm:row-span-2" },
-  { label: "Instructor workshop — Cairo", hint: "Portrait, 800×1000", span: "" },
-  { label: "Community meetup — Riyadh", hint: "Portrait, 800×1000", span: "" },
-  { label: "Awards night — Casablanca", hint: "Landscape, 1200×800", span: "" },
-  { label: "Trading floor session — Amman", hint: "Landscape, 1200×800", span: "" },
+  { label: "conference1", hint: "Landscape, 1600×900", span: "sm:col-span-2 sm:row-span-2", src: "/images/p1.jpg" },
+  { label: "conference2", hint: "Portrait, 800×1000", span: "", src: "/images/p5.jpg" },
+  { label: "conference3", hint: "Portrait, 800×1000", span: "", src: "/images/p9.jpg" },
+  { label: "conference4", hint: "Landscape, 1200×800", span: "", src: "/images/p3.jpg" },
+  { label: "conference5", hint: "Landscape, 1200×800", span: "", src: "/images/p6.jpg" },
 ];
 
 export function About() {
   return (
     <section id="about" className="section-neutral border-b border-border">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14 lg:items-center">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">About GO AI</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -38,24 +41,37 @@ export function About() {
 
           <div>
             <div className="grid auto-rows-[120px] grid-cols-2 gap-3 sm:auto-rows-[140px] sm:grid-cols-4">
-              {PHOTO_SLOTS.map((slot) => (
-                <figure
-                  key={slot.label}
-                  className={`flex flex-col items-center justify-center rounded-xl border border-dashed border-border-strong bg-card p-4 text-center ${slot.span}`}
-                >
-                  <ImageIcon
-                    className="h-5 w-5 text-muted-foreground"
-                    strokeWidth={1.75}
-                    aria-hidden="true"
-                  />
-                  <figcaption className="mt-2 text-xs font-medium text-foreground">
-                    {slot.label}
-                  </figcaption>
-                  <span className="mt-1 text-[0.7rem] text-muted-foreground">
-                    Photo slot · {slot.hint}
-                  </span>
-                </figure>
-              ))}
+              {PHOTO_SLOTS.map((slot) =>
+                slot.src ? (
+                  <figure
+                    key={slot.label}
+                    className={`overflow-hidden rounded-xl border border-border-strong ${slot.span}`}
+                  >
+                    <img
+                      src={slot.src}
+                      alt={slot.label}
+                      className="h-full w-full object-cover"
+                    />
+                  </figure>
+                ) : (
+                  <figure
+                    key={slot.label}
+                    className={`flex flex-col items-center justify-center rounded-xl border border-dashed border-border-strong bg-card p-4 text-center ${slot.span}`}
+                  >
+                    <ImageIcon
+                      className="h-5 w-5 text-muted-foreground"
+                      strokeWidth={1.75}
+                      aria-hidden="true"
+                    />
+                    <figcaption className="mt-2 text-xs font-medium text-foreground">
+                      {slot.label}
+                    </figcaption>
+                    <span className="mt-1 text-[0.7rem] text-muted-foreground">
+                      Photo slot · {slot.hint}
+                    </span>
+                  </figure>
+                ),
+              )}
             </div>
           </div>
         </div>

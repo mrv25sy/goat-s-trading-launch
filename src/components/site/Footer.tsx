@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+//import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send, Linkedin, Mail } from "lucide-react";
 import { Logo } from "./Logo";
 
@@ -26,16 +26,16 @@ export function Footer() {
             </p>
             <div className="mt-5 flex items-center gap-2">
               <a
-                href="https://instagram.com"
-                aria-label="Instagram"
+                href="https://www.instagram.com/the.goat.trading"
+                aria-label="The goat trading"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/60 bg-primary/10 text-primary transition-colors hover:bg-primary/20"
               >
                 <Instagram className="h-4.5 w-4.5" />
               </a>
               {[
-                { Icon: Youtube, label: "YouTube", href: "https://youtube.com" },
-                { Icon: Send, label: "Telegram", href: "https://telegram.org" },
-                { Icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+                { Icon: Youtube, label: "YouTube", href: "" },
+                { Icon: Send, label: "Telegram", href: "" },
+                { Icon: Linkedin, label: "LinkedIn", href: "" },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
@@ -72,7 +72,7 @@ export function Footer() {
               Legal &amp; contact
             </h2>
             <ul className="mt-4 space-y-2.5">
-              <li>
+              {/* <li>
                 <Link
                   to="/terms"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -87,14 +87,16 @@ export function Footer() {
                 >
                   Privacy Policy
                 </Link>
-              </li>
+              </li>*/}
               <li>
                 <a
-                  href="mailto:hello@goai-academy.example"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=goai@gmail.com&su=New%20inquiry%20%E2%80%94%20THE%20GOAT%20website"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Mail className="h-4 w-4" />
-                  hello@goai-academy.example
+                  @
                 </a>
               </li>
             </ul>
