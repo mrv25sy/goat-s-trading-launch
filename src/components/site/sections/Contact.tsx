@@ -19,12 +19,49 @@ export function Contact() {
     return e;
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const e = validate(values);
-    setErrors(e);
-    setSubmitted(Object.keys(e).length === 0);
-  };
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  const e = validate(values);
+  setErrors(e);
+
+  if (Object.keys(e).length > 0) {
+    setSubmitted(false);
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "https://test120.app.n8n.cloud/webhook-test/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          email: values.email.trim(),
+          message: values.message.trim(),
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Webhook failed: ${response.status}`);
+    }
+
+    setSubmitted(true);
+
+    setValues({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Failed to send message:", error);
+    setSubmitted(false);
+  }
+};
 
   const field = (key: keyof typeof values) => ({
     id: key,

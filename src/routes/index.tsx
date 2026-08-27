@@ -12,7 +12,7 @@ import { Pricing } from "@/components/site/sections/Pricing";
 import { Testimonials } from "@/components/site/sections/Testimonials";
 import { Contact } from "@/components/site/sections/Contact";
 
-const TITLE = "THE GOAT — Financial Markets Education by GO AI Academy";
+const TITLE = "The GOAT Official Site";
 const DESCRIPTION =
   "GO AI's flagship program: AI-powered education, 15+ expert market specialists, daily support and a global community for forex, crypto, gold and investing.";
 
