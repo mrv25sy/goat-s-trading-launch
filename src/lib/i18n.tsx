@@ -195,7 +195,7 @@ const translations = {
       description:
         "GO AI Academy's flagship financial markets education program, structured learning, expert recommendations, and daily support.",
       quickLinks: "Quick links",
-      legal: "Legal & contact",
+      legal: "Contact",
       allRights: "All rights reserved.",
     },
 
@@ -295,7 +295,7 @@ const translations = {
         "GO AI هي إحدى الأكاديميات التعليمية الرائدة في العالم العربي، مع حضور في 22 دولة عربية وأكثر من 50 دولة حول العالم. يضم فريقنا أكثر من 15 خبيرًا ومدربًا عربيًا يعملون بأكثر من 6 لغات، وننظم أكثر من 20 مؤتمرًا حول العالم كل عام.",
       arabCountries: "دولة عربية",
       worldwide: "دولة حول العالم",
-      languages: "لغات يتم تدريسها",
+      languages: "اللغات التي يدرس بها",
       conferences: "مؤتمر عالمي سنويًا",
     },
 
@@ -397,7 +397,7 @@ const translations = {
       description:
         "البرنامج الرئيسي لتعليم الأسواق المالية من GO AI Academy، مع تعليم منظم وتوصيات من الخبراء ودعم يومي.",
       quickLinks: "روابط سريعة",
-      legal: "القانون والتواصل",
+      legal: "التواصل",
       allRights: "جميع الحقوق محفوظة.",
     },
 

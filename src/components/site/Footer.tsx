@@ -1,16 +1,18 @@
-//import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Send, Linkedin, Mail } from "lucide-react";
 import { Logo } from "./Logo";
+import { useLanguage } from "@/lib/i18n";
 
 const QUICK_LINKS = [
-  { label: "Home", href: "/#home" },
-  { label: "Programs", href: "/#programs" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-];
+  { key: "home", href: "/#home" },
+  { key: "programs", href: "/#programs" },
+  { key: "pricing", href: "/#pricing" },
+  { key: "about", href: "/#about" },
+  { key: "contact", href: "/#contact" },
+] as const;
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -18,12 +20,15 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <Logo />
-              <span className="text-sm font-semibold tracking-[0.18em] uppercase">The Goat</span>
+              <span className="text-sm font-semibold tracking-[0.18em] uppercase">
+                The Goat
+              </span>
             </div>
+
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              GO AI Academy's flagship financial markets education program, structured learning,
-              expert recommendations, and daily support.
+              {t.footer.description}
             </p>
+
             <div className="mt-5 flex items-center gap-2">
               <a
                 href="https://www.instagram.com/the.goat.trading"
@@ -32,6 +37,7 @@ export function Footer() {
               >
                 <Instagram className="h-4.5 w-4.5" />
               </a>
+
               {[
                 { Icon: Youtube, label: "YouTube", href: "" },
                 { Icon: Send, label: "Telegram", href: "" },
@@ -49,18 +55,19 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Quick links">
+          <nav aria-label={t.footer.quickLinks}>
             <h2 className="text-xs font-semibold tracking-[0.14em] text-foreground uppercase">
-              Quick links
+              {t.footer.quickLinks}
             </h2>
+
             <ul className="mt-4 space-y-2.5">
               {QUICK_LINKS.map((l) => (
-                <li key={l.label}>
+                <li key={l.key}>
                   <a
                     href={l.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {l.label}
+                    {t.nav[l.key]}
                   </a>
                 </li>
               ))}
@@ -69,8 +76,9 @@ export function Footer() {
 
           <div className="md:col-span-2 lg:col-span-1">
             <h2 className="text-xs font-semibold tracking-[0.14em] text-foreground uppercase">
-              Legal &amp; contact
+              {t.footer.legal}
             </h2>
+
             <ul className="mt-4 space-y-2.5">
               {/* <li>
                 <Link
@@ -88,6 +96,7 @@ export function Footer() {
                   Privacy Policy
                 </Link>
               </li>*/}
+
               <li>
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=goai@gmail.com&su=New%20inquiry%20%E2%80%94%20THE%20GOAT%20website"
@@ -104,7 +113,9 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-6">
-          <p className="text-sm text-muted-foreground">© 2026 GO AI. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">
+            © 2026 GO AI. {t.footer.allRights}
+          </p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { ImageIcon } from "lucide-react";
-
+import { useLanguage } from "@/lib/i18n";
 // To add a real photo: put the image file in /public/images/, then set its
 // "src" below to "/images/your-file-name.jpg". Leave src empty ("") to keep
 // showing the placeholder box for that slot.
@@ -12,24 +12,25 @@ const PHOTO_SLOTS = [
 ];
 
 export function About() {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="section-neutral border-b border-border">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14 lg:items-center">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">About GO AI</h2>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+  {t.about.title}
+</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              GO AI is one of the leading educational academies in the Arab world, with a presence
-              in 22 Arab countries and 50+ countries worldwide. Our team includes 15+ Arab experts
-              and instructors working across 6+ languages, and we host 20+ conferences globally each
-              year.
-            </p>
+  {t.about.description}
+</p>
             <dl className="mt-8 grid grid-cols-2 gap-4">
               {[
-                ["22", "Arab countries"],
-                ["50+", "Countries worldwide"],
-                ["6+", "Languages taught"],
-                ["20+", "Global conferences a year"],
+                ["22", t.about.arabCountries],
+                ["50+", t.about.worldwide],
+                ["6+", t.about.languages],
+                ["20+", t.about.conferences],
               ].map(([value, label]) => (
                 <div key={label} className="rounded-lg border border-border bg-card p-4">
                   <dt className="text-xs text-muted-foreground">{label}</dt>

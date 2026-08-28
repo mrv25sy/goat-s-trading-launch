@@ -1,4 +1,5 @@
 import { Clock, PhoneCall, Headset, ImageIcon, Globe2 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 // To add the real community photo: put the image file in /public/images/,
 // then set this to "/images/your-file-name.jpg". Leave it as "" to keep
@@ -6,24 +7,26 @@ import { Clock, PhoneCall, Headset, ImageIcon, Globe2 } from "lucide-react";
 const COMMUNITY_PHOTO_SRC = "/images/p7.jpg";
 
 export function Support() {
+  const { t } = useLanguage();
+
   return (
     <section id="support" className="border-b border-border">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Follow-up &amp; support
+              {t.support.title}
             </h2>
+
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              We built a real-time support system so you're never stuck: ask a question and get a
-              response in under 10 minutes, backed by regular follow-up calls to keep you moving
-              forward.
+              {t.support.description}
             </p>
+
             <ul className="mt-8 space-y-2.5">
               {[
-                "Under 10 minutes average response time",
-                "Regular scheduled follow-up calls",
-                "A dedicated team available every day",
+                t.support.fastResponse,
+                t.support.followup,
+                t.support.team,
               ].map((text) => (
                 <li key={text} className="flex items-start gap-2.5 text-sm text-foreground">
                   <span
@@ -37,37 +40,48 @@ export function Support() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Community</h2>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {t.support.community}
+            </h2>
+
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Join a community of thousands of members from around the world. Build real connections
-              with people from different countries, all working toward the same goal.
+              {t.support.communityDescription}
             </p>
+
             {COMMUNITY_PHOTO_SRC ? (
               <figure className="mt-8 overflow-hidden rounded-xl border border-border-strong">
                 <img
                   src={COMMUNITY_PHOTO_SRC}
-                  alt="Community members meetup"
+                  alt={t.support.community}
                   className="h-64 w-full object-cover"
                 />
+
                 <figcaption className="flex items-center gap-2 border-t border-border bg-surface px-4 py-3 text-xs text-muted-foreground">
                   <Globe2 className="h-4 w-4" strokeWidth={1.75} aria-hidden />
-                  Members across 50+ countries
+                  {t.support.members}
                 </figcaption>
               </figure>
             ) : (
               <figure className="mt-8 flex flex-col items-center justify-center rounded-xl border border-dashed border-border-strong bg-surface px-6 py-12 text-center">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background">
-                  <ImageIcon className="h-5 w-5 text-muted-foreground" strokeWidth={1.75} aria-hidden />
+                  <ImageIcon
+                    className="h-5 w-5 text-muted-foreground"
+                    strokeWidth={1.75}
+                    aria-hidden
+                  />
                 </span>
+
                 <figcaption className="mt-3 text-sm font-medium text-foreground">
-                  Community photo slot — members meetup
+                  {t.support.community} — members meetup
                 </figcaption>
+
                 <span className="mt-1 text-xs text-muted-foreground">
                   Add your real community photograph here · Landscape, 1600×900
                 </span>
+
                 <span className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
                   <Globe2 className="h-4 w-4" strokeWidth={1.75} aria-hidden />
-                  Members across 50+ countries
+                  {t.support.members}
                 </span>
               </figure>
             )}
